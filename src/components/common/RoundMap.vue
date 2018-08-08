@@ -1,11 +1,11 @@
 <template>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="../../assets/images/harp/01.jpg" alt=""/></div>
-      <div class="swiper-slide"><img src="../../assets/images/harp/02.jpg" alt=""/></div>
-      <div class="swiper-slide"><img src="../../assets/images/harp/03.jpg" alt=""/></div>
-      <div class="swiper-slide"><img src="../../assets/images/harp/04.jpg" alt=""/></div>
-      <div class="swiper-slide"><img src="../../assets/images/harp/05.jpg" alt=""/></div>
+      <div class="swiper-slide"><img src="https://s1.ax1x.com/2018/07/22/PGQAsO.jpg" alt=""/></div>
+      <div class="swiper-slide"><img src="https://s1.ax1x.com/2018/07/22/PGQELD.jpg" alt=""/></div>
+      <div class="swiper-slide"><img src="https://s1.ax1x.com/2018/07/22/PGQZee.jpg" alt=""/></div>
+      <div class="swiper-slide"><img src="https://s1.ax1x.com/2018/07/22/PGQedH.jpg" alt=""/></div>
+      <div class="swiper-slide"><img src="https://s1.ax1x.com/2018/07/22/PGQkQK.jpg" alt=""/></div>
     </div>
     <!-- 如果需要分页器 -->
     <div class="swiper-pagination"></div>

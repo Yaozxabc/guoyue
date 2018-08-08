@@ -1,10 +1,11 @@
 <template>
-<div class="products">
+<div class="product">
   <ul>
-    <li v-for="product in products">
+    <li v-for="product in products" :class="{border:isShow}">
       <a href="javascript:">
-        <img :src="product.src" alt="product.name"/>
-        <h4 class="name">{{product.name}}</h4>
+        <img :src="product.src" alt="product.name" :class="{imgBg:isShow}"/>
+        <h4 class="name">{{product.name}}<span class="count">月销量：{{product.count}}</span></h4>
+
         <div class="price">
           <span class="old_price">￥{{product.oldPrice}}</span>
           <span class="new_price">￥{{product.newPrice}}</span>
@@ -13,13 +14,17 @@
       </a>
     </li>
   </ul>
-  <button class="more">查看更多</button>
+  <button class="more" v-show="!isShow">查看更多</button>
 </div>
 </template>
 
 <script type="text/ecmascript-6">
     export default{
       props:{
+        isShow:{
+          type:Boolean,
+          default:false
+        },
         products:{
           type:Array,
           default:[{name:"月牙06山水知音",oldPrice:"5980",newPrice:"5180",src:require("../../assets/images/products/base/01.png")}]
@@ -34,31 +39,46 @@
 </script>
 
 
-<style scoped>
-.products{
-  width: 620px;
+<style scoped="" type="text/css" lang="scss">
+$wd:620*0.45px;
+.product{
+  width: 93%;
   margin: 16px auto;
 }
-  .products li{
-    width: 292px;
+.product ul{
+  width: 100%;
+  overflow: hidden;
+}
+  .product li{
+    width: 50%;
     float: left;
-    margin-right: 32px;
+    box-sizing: border-box;
+    padding: 1%;
+    padding-bottom: 20px;
     position: relative;
   }
-  .products li:nth-child(2n){
+  .product li:nth-child(2n){
     margin-right:0;
   }
-  .products a{
+  .product a{
     color: black;
   }
-  .products img{
+  .product img{
     width: 100%;
-    height: 280px;
+    height: $wd;;
   }
-  .products h4{
+  .product h4{
     margin-top: 18px;
     height: 20px;
     line-height: 20px;
+  }
+  .count{
+    margin-left: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+    color: crimson;
+    text-align: center;
+    border-left: 1px solid slategrey;
   }
   .price{
     float: left;
@@ -67,6 +87,7 @@
   }
   .old_price{
     width: 100%;
+    text-decoration: line-through;
     font-size: 14px;
     color: #a7a8aa;
   }
@@ -81,15 +102,24 @@
     right: 60px;
     width: 70px;
     height: 30px;
-    background-image: url("../../assets/images/nav/navlist-all.png");
+    background-image: url("https://s1.ax1x.com/2018/07/23/PJgW7D.png");
     background-repeat: no-repeat;
     background-position: -30px -103px;
     background-size: 400px 400px;
   }
   .more{
+    display: block;
     margin: 15px auto;
-    width: 620px;
+    width: 94%;
     background: #c9391f;
+    border: none;
+    border-radius: 2px;
     color: white;
+  }
+  .border{
+    border:$line-border
+  }
+  .imgBg{
+    background: $img-bg;
   }
 </style>

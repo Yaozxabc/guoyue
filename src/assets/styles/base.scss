@@ -1,0 +1,37 @@
+$font-color:#9e9c9c;
+$line-border:1px solid #e2dadb;
+$img-bg:#fff;
+$indexColor:#d60f0f;
+
+
+
+
+.MainBgColor{background: #fff;}
+.arrow_top{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width:0 10px 10px 10px;
+  border-color:  transparent transparent #c7aa5a transparent;
+}
+.arrow_bottom{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width:  10px 10px 0 10px;
+  border-color: #c7aa5a transparent transparent transparent;
+}
+.active_arrow_top{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width:0 10px 10px 10px;
+  border-color:  transparent transparent #d60f0f transparent;
+}
+.active_arrow_bottom{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width:  10px 10px 0 10px;
+  border-color: #d60f0f transparent transparent transparent;
+}

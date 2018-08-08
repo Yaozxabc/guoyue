@@ -3,96 +3,159 @@
     <header>
       <div class="top_hd">
         <ul>
-          <li>
-            <a href="javascript:">
-              <h3>古筝专卖</h3>
-              <p>敦煌、鼎韵、月牙等</p>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:">
-              <h3>古筝专卖</h3>
-              <p>练习琴</p>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:">
-              <h3>古筝专卖</h3>
-              <p>敦煌、鼎韵、月牙等</p>
-            </a>
+          <li v-for="(item,index) in topMenu">
+            <router-link :to="{path:item.path,params:{top:topVal}}" tag="a">
+              <h3>{{item.title}}</h3>
+              <p>{{item.value}}</p>
+            </router-link>
           </li>
         </ul>
       </div>
-      <mt-navbar v-model="selected" class="NavList">
-        <mt-tab-item id="1" class="nav_title">国乐首页</mt-tab-item>
-        <mt-tab-item id="2" class="nav_title">古筝专卖</mt-tab-item>
-        <mt-tab-item id="3" class="nav_title">古琴专卖</mt-tab-item>
-        <mt-tab-item id="4" class="nav_title">优惠不停歇</mt-tab-item>
-        <mt-tab-item id="5" class="nav_title">来店路线</mt-tab-item>
-      </mt-navbar>
-      <div class="warn">只要发送国乐一号到10086就可以获得100元优惠券</div>
+      <div :class="['NavList',{fix:topVal}]">
+        <ul>
+          <li v-for="item in pageNav" class="nav_title">
+            <router-link tag="a" :to="{path:item.path}" >{{item.value}}</router-link>
+          </li>
+        </ul>
+      </div>
     </header>
-    <!-- tab-container -->
-    <mt-tab-container v-model="selected">
-      <mt-tab-container-item id="1">
-       <index></index>
-      </mt-tab-container-item>
-      <mt-tab-container-item id="2">
-dddd
-      </mt-tab-container-item>
-      <mt-tab-container-item id="3">
-
-      </mt-tab-container-item>
-    </mt-tab-container>
-    <footer>
-      <div class="contact">
-        <h5>获取最优惠价格</h5>
-        <div class="form">
-          <div class="name"><span>姓名:</span><input type="text" placeholder="请输入你的名字"/></div>
-          <div class="telphone"><span>电话:</span><input type="text" placeholder="请输入你的手机号码"/></div>
-          <input type="submit"  value="提交" class="submit"/>
-        </div>
-      </div>
-      <div class="business_info">
-        <p>免费咨询热线：10086</p>
-        <p>qq咨询：10000</p>
-        <p>微信咨询：10010</p>
-        <p>地址：天河东体育西路广场北2楼</p>
-        <p>2014-2016 粤d31123231cp</p>
-      </div>
+  <div class="container">
+    <router-view></router-view>
+  </div>
+    <footer v-show="isShow">
+      <Foot></Foot>
     </footer>
+    <nav>
+      <ul class="bottom_nav">
+        <li><a href="javascript:">
+          <i class="gq"></i>
+        <p>古筝专卖</p>
+        </a></li>
+        <li><a href="javascript:">
+          <i class="gz"></i>
+        <p>古琴专卖</p>
+        </a></li>
+        <li><a href="javascript:">
+          <i class="ph"></i>
+        <p>咨询热线</p>
+        </a></li>
+        <li class="active"><a href="tel:10086">
+          <i class="msg"></i>
+        <p>在线客服</p>
+        </a></li>
+      </ul>
+    </nav>
+    <a href="#app" class="toTop" v-show="topVal" @click="toTop">top</a>
   </div>
 </template>
 
 <script>
+  import $ from 'jquery'
   import { Navbar, TabItem } from 'mint-ui';
-  import index from './components/pages/index.vue';
+  import Foot from '@/components/common/Foot'
 
 export default {
   name: 'App',
   data(){
     return{
-      selected:"1"
+      pageNav:[
+        {id:"01",value:"国乐首页",path:"/"},
+        {id:"02",value:"古筝专卖",path:"/zither"},
+        {id:"03",value:"古琴专卖",path:"/jean"},
+        {id:"04",value:"优惠不停歇",path:"/discount"},
+        {id:"05",value:"来店路线",path:"/address"}
+      ],
+      viewShow:false,
+      topMenu:[
+        {id:"01",title:"古筝专卖",value:"敦煌、鼎韵、月牙等",path:'/zitherType'},
+        {id:"02",title:"古琴专卖",value:"练习琴，名家琴",path:'/jeanType'},
+        {id:"03",title:"实体地址",value:"广州体育西路F出口",path:'/about'},
+      ],
+      topVal:false,
+      isShow:true,
     }
   },
   methods:{
-    handleClick: function() {
-      this.$toast('Hello world!')
-    }
+  onScroll(){
+      if($(window).scrollTop()>$('.top_hd').height()){
+        this.topVal=true;
+      }else{
+        this.topVal=false;
+      }
+      },
+    toTop(){
+      let oBody=document.documentElement||document.body;
+      $(oBody,"html").animate({scrollTop:0},500)
+    },
   },
   components:{
-    index
+    Foot
+  },
+  computed:{
+  },
+  watch:{
+    $route(to,from){
+      if(to.path=='/zitherType'||to.path=='/jeanType'){
+        this.isShow=false
+      }else{
+        this.isShow=true
+      }
+    }
+  },
+  mounted(){
+    window.addEventListener("scroll",()=>{
+      this. onScroll();
+    })
   }
 }
 
 
 </script>
 
-<style scoped>
-  body{
-
+<style scoped lang="scss" >
+  @media screen and (min-width: 320px) and (max-width: 370px) {
+    .nav_title{
+      font-size: 26px;;
+    }
+    .bottom_nav p{
+      font-size: 26px;;
+    }
   }
+
+  @media screen and (min-width: 371px) and (max-width: 480px) {
+    .nav_title{
+      font-size: 27px;;
+    }
+    .bottom_nav p{
+      font-size: 21px;;
+    }
+  }
+
+  @media screen and (min-width: 481px) and (max-width: 64px) {
+    .nav_title{
+      font-size: 18px;;
+    }
+    .bottom_nav p{
+      font-size: 14px;;
+    }
+  }
+  .nav_title{
+    color: #ffffff;
+  }
+  .mint-navbar .mint-tab-item.is-selected{
+  color:#ffffff;
+    border-bottom: none;
+}
+.fix{
+  z-index: 2;
+  max-width: 640px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
 #app {
+  margin: 0 auto;
+  max-width: 640px;
   width: 100%;
   background: #fff0f5;
   padding-top: 14px;
@@ -114,7 +177,6 @@ export default {
   .top_hd h3{
     font-family: huawen_kaiti;
     font-weight: bold;
-
     font-size: 30px;
   }
   .top_hd p{
@@ -127,59 +189,86 @@ export default {
     width: 100%;
     background: #c9391f;
   }
-  .NavList .nav_title{
-    font-size: 18px;
-    color: #fff0f5;
+  .NavList ul{
+    display: flex;
   }
-  .warn{
+  .NavList li{
+    flex: 1;
+    text-align: center;
+  }
+  .NavList li a{
+    color: #ffffff;
+  }
+  nav{
+    max-width: 640px;
     width: 100%;
-    height: 44px;
-    line-height: 44px;
-    font-size: 18px;
-    text-align: center;
-    color: orange;
+    position: fixed;
+    left: calc(50% - 320px);
+    bottom: 0;
   }
-  .contact{
+  .bottom_nav{
+    background: #f5f3e6;
+    display: flex;
+    width: 100%;
+    min-height: 60px;
+    border-top: 1px solid #dddddd;
+  }
+  .bottom_nav li{
+    width: 140px;
+    height: 100%;
+    border-right: 1px solid #dddddd;
     text-align: center;
-    border: 1px solid black;
+  }
+  .bottom_nav a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    color: #000;
+  }
+  .bottom_nav .active{
+    background: firebrick;
+    flex-grow: 1;
+  }
+  .bottom_nav i{
     margin: 0 auto;
-    width: 584px;
-    height: 200px;
-    border-radius: 10px;
-    padding: 25px 0 0;
-  }
-  .contact h5{
-    color: #0055aa;
-    font-weight: bold;
-  }
-  .form div{
-    margin: 10px auto;
-    width: 100%;
-    height: 32px;
-  }
-  .name input,.telphone input{
-    width: 300px;
+    display: block;
+    width: 30px;
     height: 30px;
-    margin-left: 5px;
-    border: none;
-    background-color: transparent;
-    border-bottom: 1px solid slategrey;
+    border-radius: 50%;
+    background-image: url("https://s1.ax1x.com/2018/07/23/PJgW7D.png");
+    background-size: 400px 400px;
   }
-  .submit{
-    border-radius: 5px;
-    border: none;
-    width: 520px;
-    height: 30px;
-    background: #ff5a60;
+
+  .gq{
+    background-position: -111px -100px;
+  }
+  .gz{
+    background-position: -162px -100px;
+  }
+  .ph{
+    background-position: -264px -100px;
+  }
+  .msg{
+    background-position: -216px -100px;
+  }
+  .active a{
     color: white;
   }
-  .business_info{
-    margin-bottom: 60px;
+  .toTop{
+    position: fixed;
+    left: calc(50% + 160px );
+    bottom: 150px;
+    display: block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
     text-align: center;
-  }
-  .business_info p{
-    margin-top: 5px;
-    height: 20px;
-    line-height: 20px;
+    border: none;
+    border-radius: 50%;
+    opacity: .8;
+    background: darkmagenta;
+    color: white;
   }
 </style>
