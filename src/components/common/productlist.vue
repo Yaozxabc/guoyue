@@ -1,9 +1,12 @@
 <template>
 <div class="product">
+  <div class="loading_warp" v-show="!ishow">
+    <loadang></loadang>
+  </div>
   <ul>
-    <li v-for="product in products" :class="{border:isShow}">
+    <li v-for="product in products" @click="selectItem(product)" :class="{border:isShow}">
       <a href="javascript:">
-        <img :src="product.src" alt="product.name" :class="{imgBg:isShow}"/>
+        <img :src="product.src" :alt="product.name" :class="{imgBg:isShow}"/>
         <h4 class="name">{{product.name}}<span class="count">月销量：{{product.count}}</span></h4>
 
         <div class="price">
@@ -14,7 +17,7 @@
       </a>
     </li>
   </ul>
-  <button class="more" v-show="!isShow">查看更多</button>
+  <router-link :to="{path:'/zither'}" class="more" v-show="!isShow">查看更多</router-link>
 </div>
 </template>
 
@@ -27,21 +30,41 @@
         },
         products:{
           type:Array,
-          default:[{name:"月牙06山水知音",oldPrice:"5980",newPrice:"5180",src:require("../../assets/images/products/base/01.png")}]
+          default:[]
         }
       },
         data(){
             return {
-
             }
-        }
+        },
+    methods:{
+      selectItem(product){
+        this.$emit('select',product)
+      }
+    },
+    computed:{
+      ishow(){
+          return this.products.length
     }
+    },
+      mounted(){
+      }
+    }
+
 </script>
 
 
 <style scoped="" type="text/css" lang="scss">
+  .loading_warp{
+    position: absolute;
+    z-index: 5;
+    width: 105%;
+    height: 100%;
+    background: #ffffff;
+  }
 $wd:620*0.45px;
 .product{
+  position: relative;
   width: 93%;
   margin: 16px auto;
 }
@@ -107,14 +130,16 @@ $wd:620*0.45px;
     background-position: -30px -103px;
     background-size: 400px 400px;
   }
-  .more{
+ .product .more{
     display: block;
     margin: 15px auto;
+    height: 24px;
+    line-height: 24px;
     width: 94%;
     background: #c9391f;
-    border: none;
     border-radius: 2px;
-    color: white;
+    text-align: center;
+    color: #ffffff;
   }
   .border{
     border:$line-border

@@ -9,7 +9,7 @@
     <i class="iconfont icon-menu"></i>
   </div>
   <div class="banan_lt">
-    <img :src="bananer.imgSrc" :alt="bananer.value"/>
+    <img v-lazy="bananer.imgSrc" :alt="bananer.value"/>
   </div>
   <div class="MainSort">
     <ul>

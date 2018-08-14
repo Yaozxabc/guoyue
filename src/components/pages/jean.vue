@@ -18,7 +18,7 @@
                 {name:"秋江夜泊",pushTime:"2015-07-03",star:"1",oldPrice:"1380",newPrice:"970",count:'47',src:require("@/assets/images/products/jean/07.jpg")},
                 {name:"映山红",pushTime:"2016-06-03",star:"3",oldPrice:"1980",newPrice:"1480",count:'42',src:require("@/assets/images/products/jean/08.jpg")}
               ],
-              bananer:{id:"01",value:'古筝',imgSrc:require("@/assets/images/bananer/lt_ban/02.jpg")}
+              bananer:{id:"01",value:'古筝',imgSrc:"http://www.guoyueyihao.com/templets/images/xinadd/add_center_baner_02.png"}
             }
         },
   components:{

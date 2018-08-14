@@ -5,6 +5,7 @@
   <ul>
     <li v-for="(item,index) in pageCount" :class="{active:nowIndex==index}" @click=" setPageShow(index)">{{index+1}}</li>
   </ul>
+  <p>共{{list.length}}条记录/{{pageCount}}页</p>
 </div>
 </template>
 
@@ -36,7 +37,7 @@
     },
     methods:{
       setPageShow(index){
-        if(index){
+        if(index>=0){
           this.nowIndex=index
         }
         let startIndex=this.nowIndex*this.showCount;

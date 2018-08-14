@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="FootBan">
-      <img src="../../assets/images/bananer/footban.png" alt="国乐一号"/>
+      <img :src="foot_ban.src" :alt="foot_ban.value"/>
     </div>
     <div class="contact">
       <h5>获取最优惠价格</h5>
@@ -24,7 +24,9 @@
 <script type="text/ecmascript-6">
     export default{
         data(){
-            return {}
+            return {
+              foot_ban:{id:'01',value:'国乐一号',src:require('@/assets/images/bananer/footban.png')}
+            }
         }
     }
 </script>

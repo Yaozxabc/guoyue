@@ -13,20 +13,26 @@
       <div></div>
     </div>
   </div>
-
+  <p class="desc">{{title}}</p>
 </div>
-    <p>现在的数字是{{getCount}}</p>
-    <input type="button" value="增加" @click="add"/>
-    <input type="button" value="减少" @click="reduce"/>
-    <input type="button" value="偶数添加1" @click="OddAdd"/>
-    <input type="button" value="添加异步操作" @click="AjaxAdd"/>
-    <input type="button" value="请求数据" @click="showload"/>
+    <!--<p>现在的数字是{{getCount}}</p>-->
+    <!--<input type="button" value="增加" @click="add"/>-->
+    <!--<input type="button" value="减少" @click="reduce"/>-->
+    <!--<input type="button" value="偶数添加1" @click="OddAdd"/>-->
+    <!--<input type="button" value="添加异步操作" @click="AjaxAdd"/>-->
+    <!--<input type="button" value="请求数据" @click="showload"/>-->
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import {mapActions,mapGetters} from 'vuex'
     export default{
+      props:{
+        title:{
+          type:String,
+          default:"正在加载中..."
+        }
+      },
         data(){
             return {}
         },

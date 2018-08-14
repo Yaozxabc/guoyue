@@ -15,7 +15,7 @@
     </section>
     <section>
       <div class="md_bananer">
-        <img src="https://s1.ax1x.com/2018/07/22/PGQWf1.jpg" alt=""/>
+        <img :src="md_ban.src" :alt="md_ban.value"/>
       </div>
     </section>
     <section>
@@ -28,13 +28,13 @@
     </section>
     <section>
       <div class="lt_bananer">
-        <img src="../../assets/images/bananer/lt_ban/01.png" alt=""/>
+        <img v-lazy="lt_ban.src" :alt="lt_ban.value"/>
       </div>
     </section>
     <section>
       <div class="Promotion">
       <h4>促销特价</h4>
-      <productlist :products="productlist.NO1"></productlist>
+      <productlist :products="productlist.NO1" @select="selectPage"></productlist>
       </div>
     </section>
   </div>
@@ -50,27 +50,29 @@
     export default{
         data(){
             return {
+              md_ban:{id:'01',value:'古琴',src:require('../../assets/images/bananer/md_ban/01.png')},
+              lt_ban:{id:'02',value:'古筝',src:require('../../assets/images/bananer/lt_ban/01.png')},
               productlist: {
                 "NO1": [
-                  {
+                  {id:'01',
                     name: "月牙06山水知音",
                     oldPrice: "5980",
                     newPrice: "5180",
                     src: "https://s1.ax1x.com/2018/07/22/PGKUBQ.png"
                   },
-                  {
+                  {id:'02',
                     name: "鼎韵903午后清芳",
                     oldPrice: "5800",
                     newPrice: "4880",
                     src: "https://s1.ax1x.com/2018/07/22/PGKa7j.png"
                   },
-                  {
+                  { id:'03',
                     name: "敦煌694蕉床夜月",
                     oldPrice: "4980",
                     newPrice: "3180",
                     src: "https://s1.ax1x.com/2018/07/22/PGKNng.png"
                   },
-                  {
+                  {id:'04',
                     name: "鼎韵903红木竹简",
                     oldPrice: "2880",
                     newPrice: "1480",
@@ -78,25 +80,25 @@
                   },
                 ],
                 "NO2": [
-                  {
+                  {id:'05',
                     name: "520定制古筝",
                     oldPrice: "5980",
                     newPrice: "5180",
                     src: require('../../assets/images/products/best/01.png')
                   },
-                  {
+                  {id:'06',
                     name: "双核潮阳",
                     oldPrice: "5800",
                     newPrice: "4880",
                     src: require('../../assets/images/products/best/02.png')
                   },
-                  {
+                  {id:'07',
                     name: "敦煌694蕉床夜月",
                     oldPrice: "4980",
                     newPrice: "3180",
                     src: require('../../assets/images/products/best/03.png')
                   },
-                  {
+                  {id:'08',
                     name: "鼎韵903红木竹简",
                     oldPrice: "2880",
                     newPrice: "1480",
@@ -104,25 +106,25 @@
                   },
                 ],
                 "NO3": [
-                  {
+                  {id:'09',
                     name: "月牙06山水知音",
                     oldPrice: "5980",
                     newPrice: "5180",
                     src: require('../../assets/images/products/moderm/05.png')
                   },
-                  {
+                  {id:'10',
                     name: "鼎韵903午后清芳",
                     oldPrice: "5800",
                     newPrice: "4880",
                     src: require('../../assets/images/products/moderm/02.png')
                   },
-                  {
+                  {id:'11',
                     name: "敦煌694蕉床夜月",
                     oldPrice: "4980",
                     newPrice: "3180",
                     src: require('../../assets/images/products/moderm/03.png')
                   },
-                  {
+                  {id:'12',
                     name: "鼎韵903红木竹简",
                     oldPrice: "2880",
                     newPrice: "1480",
@@ -130,9 +132,19 @@
                   },
                 ]
               }
-
             }
         },
+  created(){
+
+  },
+  methods:{
+    selectPage(product){
+      this.$router.push({
+        path:`/product/${product.id}`,
+        params: {id:product.id}
+      })
+    }
+  },
   components:{
     RoundMap,productlist,Nav,MainType,ScrollAd,LevelTab
   }

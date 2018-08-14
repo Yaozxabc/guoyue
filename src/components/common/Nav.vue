@@ -17,7 +17,7 @@
                 {value:"教你如何弹琴说爱",path:"/baidu",className:"nav1th"},
                 {value:"网购的价格 实体的服务",path:"/",className:"nav2th"},
                 {value:"用心服务 保证正品",path:"/",className:"nav3th"},
-                {value:"放心价格 细心服务",path:"/",className:"nav4th"}
+                {value:"放心价格 细心服务",path:"/about",className:"nav4th"}
       ]
             }
         }

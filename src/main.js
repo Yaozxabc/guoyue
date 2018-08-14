@@ -12,9 +12,11 @@ import './assets/styles/reset.css'
 import 'swiper/dist/js/swiper.min.js'
 import 'swiper/dist/css/swiper.min.css'
 import loading from '../src/components/base/loading'
+import loader from '../src/components/base/loader'
 import pageNum from '../src/components/base/pageNumber'
 import store from './store'
 import  '@/assets/styles/animate.min.css'
+import Vuelazyload from 'vue-lazyload'
 
 
 Vue.config.productionTip = false;//设置为 false 以阻止 vue 在启动时生成生产提示。
@@ -31,8 +33,13 @@ Vue.config.productionTip = false;//设置为 false 以阻止 vue 在启动时生
 //})//2、接收失败，接受的失败值对象
 Vue.prototype.$http=axios;
 Vue.use(MintUi);
+Vue.use(Vuelazyload,{
+  loading:require('@/assets/images/loading.gif')
+})
 Vue.use(loading)
+Vue.use(loader)
 Vue.use(pageNum)
+
 
 /* eslint-disable no-new */
 new Vue({

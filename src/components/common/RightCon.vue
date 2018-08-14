@@ -57,7 +57,7 @@
   .md_bananer{
     width: 100%;
     height: 180px;
-    background-image: url("../../assets/images/bananer/TypeBan/01.png");
+    background-image: url("http://www.guoyuechina.com/uploads/170327/1-1F32G4414M27.jpg");
     background-repeat: no-repeat;
     background-size: contain;
   }

@@ -19,7 +19,7 @@
         </ul>
       </div>
     </header>
-  <div class="container">
+    <div class="container">
     <router-view></router-view>
   </div>
     <footer v-show="isShow">
@@ -69,7 +69,7 @@ export default {
       topMenu:[
         {id:"01",title:"古筝专卖",value:"敦煌、鼎韵、月牙等",path:'/zitherType'},
         {id:"02",title:"古琴专卖",value:"练习琴，名家琴",path:'/jeanType'},
-        {id:"03",title:"实体地址",value:"广州体育西路F出口",path:'/about'},
+        {id:"03",title:"实体地址",value:"广州体育西路F出口",path:'/address'},
       ],
       topVal:false,
       isShow:true,

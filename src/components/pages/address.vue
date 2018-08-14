@@ -4,7 +4,7 @@
     <p>只要发送<em>"国乐一号"</em> 到<em>10086</em> 即可以获得<em>50元</em>优惠券</p>
   </div>
   <div class="address_show">
-    <img src="../../assets/images/address.png" alt="国乐一号"/>
+    <img src="http://www.guoyueyihao.com/templets/images/xinadd/liaidianluxian2_02.png" alt="国乐一号"/>
   </div>
   <div class="store_info">
     <h5 class="address">广州市天河区体育西路国乐一号店</h5>

@@ -42,7 +42,7 @@ const actions={
   })
 },
   showload:({commit,state})=>{
-    axios.get('./static/abc.txt').then((response)=>{
+    axios.get('./static/abac.txt').then((response)=>{
       alert(response.data)
       commit('hideloading')
     }).catch(()=>{
