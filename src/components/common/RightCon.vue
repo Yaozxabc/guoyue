@@ -7,7 +7,7 @@
   </header>
   <div class="main">
     <div class="products">
-      <productlist :products="curPro"></productlist>
+      <productlist :products="curPro" @select="getPage"></productlist>
     </div>
   </div>
   <footer>
@@ -17,7 +17,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import productlist from '../common/Productlist_lt.vue'
+  import productlist from '../common/productlist.vue'
   import Foot from '../common/Foot.vue'
 
     export default{
@@ -46,6 +46,11 @@
               ]
             }
         },
+  methods:{
+    getPage(product){
+      Bus.$emit('select',product)
+    }
+  },
   components:{
     productlist,Foot
   }

@@ -22,6 +22,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import Bus from '@/assets/scripts/bus.js'
     export default{
       props:{
         isShow:{
@@ -39,7 +40,7 @@
         },
     methods:{
       selectItem(product){
-        this.$emit('select',product)
+        Bus.$emit('select',product)
       }
     },
     computed:{

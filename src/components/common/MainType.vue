@@ -16,14 +16,14 @@
         data(){
             return {
               navlist:[
-                {id:"01",value:"敦煌古筝",path:"/",className:"icon1"},
-                {id:"02",value:"鼎韵古筝",path:"/",className:"icon2"},
-                {id:"03",value:"朱雀古筝",path:"/",className:"icon3"},
-                {id:"04",value:"月牙古筝",path:"/",className:"icon4"},
-                {id:"05",value:"天艺古筝",path:"/",className:"icon5"},
-                {id:"06",value:"龙凤古筝",path:"/",className:"icon6"},
-                {id:"07",value:"金运古筝",path:"/",className:"icon7"},
-                {id:"08",value:"琴园古筝",path:"/",className:"icon8"}
+                {id:"01",value:"敦煌古筝",path:"/zither",className:"icon1"},
+                {id:"02",value:"鼎韵古筝",path:"/zither",className:"icon2"},
+                {id:"03",value:"朱雀古筝",path:"/zither",className:"icon3"},
+                {id:"04",value:"月牙古筝",path:"/zither",className:"icon4"},
+                {id:"05",value:"天艺古筝",path:"/zither",className:"icon5"},
+                {id:"06",value:"龙凤古筝",path:"/zither",className:"icon6"},
+                {id:"07",value:"金运古筝",path:"/zither",className:"icon7"},
+                {id:"08",value:"琴园古筝",path:"/zither",className:"icon8"}
               ]
             }
         }

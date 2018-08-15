@@ -31,19 +31,29 @@
       <span>满{{curPage.discount_full}}元减{{curPage.discount_reduce}}元</span>
       <i class="fr discount_detail">&gt</i>
     </div>
-    <ul class="productInfo_hd">
-      <li>产品详情</li>
-      <li>产品评价</li>
+    <ul class="productInfo_hd" @click="tab($event)">
+      <li :class="{active:isShow}">产品详情</li>
+      <li :class="{active:!isShow}">产品评价</li>
     </ul>
     <div class="productInfo_con">
       <ul>
-      <li>产品主要内容</li>
-      <li>好评</li>
+      <li v-show="isShow">
+        <h3>{{curPage.name}}</h3>
+        <div class="img_section" v-for="img in imglist">
+          <a href="javascript:">
+            <img :src="img.src" :alt="img.value"/>
+          </a>
+        </div>
+      </li>
+      <li v-show="!isShow">
+        <div class="evaluate">
+          暂无更多评价
+        </div>
+      </li>
       </ul>
 
     </div>
   </div>
-
 </div>
   </transition>
 </template>
@@ -55,7 +65,20 @@
             return {
               nowIndex:'01',
               Odata:[],
-              curPage:{}
+              curPage:{},
+              isShow:true,
+              imglist:[
+                {id:'01',value:'',src:'http://www.guoyueyihao.com/templets/images/xinadd/xinadd_zhanshi_02.png',linkhref:''},
+                {id:'02',value:'',src:'https://img.alicdn.com/imgextra/i4/2285959110/TB2hwrbhBsmBKNjSZFsXXaXSVXa_!!2285959110.jpg',linkhref:''},
+                {id:'03',value:'',src:'http://www.guoyueyihao.com/uploads/allimg/160914/1-1609141AZ3629.jpg',linkhref:''},
+                {id:'04',value:'',src:'https://img.alicdn.com/imgextra/i4/2285959110/TB2JSCNsmtkpuFjy0FhXXXQzFXa_!!2285959110.jpg',linkhref:''},
+                {id:'05',value:'',src:'https://img.alicdn.com/imgextra/i2/2285959110/TB2O.WvcMAq0eJjSZFtXXc.qVXa_!!2285959110.jpg',linkhref:''},
+                {id:'06',value:'',src:'http://www.guoyueyihao.com/uploads/allimg/160914/1-1609141F011131.jpg',linkhref:''},
+                {id:'07',value:'',src:'http://www.guoyueyihao.com//uploads/allimg/160914/1-1609141F022Z8.jpg',linkhref:''},
+                {id:'08',value:'',src:'http://www.guoyueyihao.com/uploads/allimg/160914/1-1609141F02L43.jpg',linkhref:''},
+                {id:'09',value:'',src:'http://www.guoyueyihao.com/uploads/allimg/160914/1-1609141F033212.jpg',linkhref:''},
+                {id:'10',value:'',src:'http://www.guoyueyihao.com/uploads/allimg/160914/1-1609141F03N25.jpg',linkhref:''}
+              ]
             }
         },
     methods:{
@@ -71,7 +94,7 @@
       },
       _getMockInfo(){
         this.Odata=Mock.mock({
-          'list|10':[{
+          'list|100':[{
             'id|+1':1,
             'name':'@ctitle',
             'oldprice':'@natural(1600,2000)',
@@ -80,12 +103,18 @@
             'brand':'@csentence(3,6)',
             'discount_full':'@natural(1000,1005)',
             'discount_reduce':'@natural(100,105)',
-            'src':'@image(480x320,#dddddd)'
+            'src':'http://www.guoyueyihao.com/uploads/160811/1-160Q11A334423.jpg'
           }]
         })
         _.map(this.Odata.list,(item)=>{
-          return item.id=`0${item.id}`
+            return item.id=`0${item.id}`
         })
+      },
+      tab($event){
+        if($event.target.className=='active'){
+          return;
+        }
+       this.isShow=!this.isShow
       }
     },
     mounted(){
@@ -101,11 +130,13 @@
     max-width: 640px;
     margin: 0 auto;
     z-index: 100;
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    /*position: fixed;*/
+    /*overflow: auto;*/
+    /*left: 0;*/
+    /*top: 144px;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
+    /*margin-bottom: 66px;*/
     background:$BgColor;
   }
   .product_hd{
@@ -125,7 +156,7 @@
     font-weight: bold;
   }
   .product_img{
-    width: 480px;
+    width: 600px;
     margin: 0 auto;
   }
   .product_img img{
@@ -202,7 +233,7 @@
     display: flex;
     margin-top: 20px;
     height: 30px;
-    background: #b89639;
+
    border-radius: 2px;
   }
   .productInfo_hd li{
@@ -211,10 +242,14 @@
     line-height: 30px;
     font-size: 24px;
     color: #fff;
+    background: #8b8a8a;
     text-align: center;
   }
+  .productInfo_hd .active{
+    background: #b89639;
+  }
   .productInfo_con{
-    width: 96%;
+    width: 100%;
     overflow: hidden;
   }
   .productInfo_con ul{
@@ -224,10 +259,26 @@
     float: left;
     width: 50%;
   }
+  .img_section{
+    width: 100%;
+  }
+  .img_section img{
+    width: 100%;
+  }
 .show-enter-active,.show-leave-active{
   transition: all .3s ;
 }
   .show-enter,.show-leave-to{
     transform: translate3d(100%,0,0);
+  }
+  .evaluate{
+    width: 600px;
+    background: #fff;
+    color: red;
+    text-align: center;
+    margin: 20px auto;
+    border: $line-border;
+    border-radius: 10px;
+
   }
 </style>

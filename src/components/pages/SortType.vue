@@ -1,7 +1,7 @@
 <template>
 <div class="MainBgColor">
   <div class="form">
-    <i class="iconfont icon-return"></i>
+    <i class="iconfont icon-return" @click="goback"></i>
     <span class="searchInput">
       <input type="text" value="" placeholder="敦煌"/>
       <i class="iconfont icon-search"></i>
@@ -76,6 +76,9 @@
         this.end=PageNum.endNum;
       }
       this.curlist=this.products.slice(this.start,this.end)
+    },
+    goback(){
+      this.$router.go(-1)
     }
   },
   components:{

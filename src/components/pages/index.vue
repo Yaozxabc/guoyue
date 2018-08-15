@@ -19,7 +19,7 @@
       </div>
     </section>
     <section>
-      <LevelTab :products="productlist"></LevelTab>
+      <LevelTab :products="productlist" @select="selectPage"></LevelTab>
     </section>
     <section>
       <div class="video">
@@ -41,6 +41,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import Bus from '@/assets/scripts/bus.js'
   import RoundMap from '../common/RoundMap.vue'
   import Nav from '../common/Nav.vue'
   import MainType from '../common/MainType.vue'
@@ -112,19 +113,19 @@
                     newPrice: "5180",
                     src: require('../../assets/images/products/moderm/05.png')
                   },
-                  {id:'10',
+                  {id:'010',
                     name: "鼎韵903午后清芳",
                     oldPrice: "5800",
                     newPrice: "4880",
                     src: require('../../assets/images/products/moderm/02.png')
                   },
-                  {id:'11',
+                  {id:'011',
                     name: "敦煌694蕉床夜月",
                     oldPrice: "4980",
                     newPrice: "3180",
                     src: require('../../assets/images/products/moderm/03.png')
                   },
-                  {id:'12',
+                  {id:'012',
                     name: "鼎韵903红木竹简",
                     oldPrice: "2880",
                     newPrice: "1480",
@@ -136,6 +137,12 @@
         },
   created(){
 
+  },
+  mounted(){
+    let self=this
+    Bus.$on('select',(product)=>{
+      self.selectPage(product)
+    })
   },
   methods:{
     selectPage(product){

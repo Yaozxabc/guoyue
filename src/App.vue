@@ -27,15 +27,15 @@
     </footer>
     <nav>
       <ul class="bottom_nav">
-        <li><a href="javascript:">
+        <li><router-link :to="{path:'/zitherType'}" tag="a">
           <i class="gq"></i>
         <p>古筝专卖</p>
-        </a></li>
-        <li><a href="javascript:">
-          <i class="gz"></i>
-        <p>古琴专卖</p>
-        </a></li>
-        <li><a href="javascript:">
+        </router-link></li>
+        <li><router-link :to="{path:'/jeanType'}" tag="a">
+          <i class="gq"></i>
+          <p>古筝专卖</p>
+        </router-link></li>
+        <li @click="showTel"><a href="javascript:">
           <i class="ph"></i>
         <p>咨询热线</p>
         </a></li>
@@ -87,6 +87,9 @@ export default {
       let oBody=document.documentElement||document.body;
       $(oBody,"html").animate({scrollTop:0},500)
     },
+    showTel(){
+      alert('咨询热线：10086转110')
+    }
   },
   components:{
     Foot

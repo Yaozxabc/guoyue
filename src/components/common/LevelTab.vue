@@ -7,13 +7,13 @@
     </mt-navbar>
     <mt-tab-container v-model="selected2">
       <mt-tab-container-item id="sel1" :class="['animated',{bounceInRight:ok}]">
-        <productlist :products="products.NO1"></productlist>
+        <productlist :products="products.NO1" @select="getPage"></productlist>
       </mt-tab-container-item>
       <mt-tab-container-item id="sel2" :class="['animated',{bounceInRight:ok}]">
-        <productlist :products="products.NO2"></productlist>
+        <productlist :products="products.NO2" @select="getPage"></productlist>
       </mt-tab-container-item >
       <mt-tab-container-item id="sel3" :class="['animated',{bounceInRight:ok}]">
-        <productlist :products="products.NO3"></productlist>
+        <productlist :products="products.NO3" @select="getPage"></productlist>
       </mt-tab-container-item>
     </mt-tab-container>
   </div>
@@ -37,6 +37,9 @@
   methods:{
     tab(){
       this.ok=true;
+    },
+    getPage(product){
+      this.$emit('select',product)
     }
   },
         components:{

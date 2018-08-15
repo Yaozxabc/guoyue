@@ -10,6 +10,7 @@ import about from '@/components/pages/about'
 import discount from '@/components/pages/discount'
 import address from '@/components/pages/address'
 import product from '@/components/pages/product'
+import article from '@/components/pages/TeachArticle'
 import ProductDetail from '@/components/pages/ProductDetail'
 
 Vue.use(Router)
@@ -29,6 +30,11 @@ const  router=new Router({
       path: '/baidu',
       name: 'baidu',
       beforeEnter() {window.location.href = 'http://www.baidu.com'}
+    },
+    {
+      path: '/article',
+      name: 'article',
+      component:article
     },
     {
       path:'/zitherType',
