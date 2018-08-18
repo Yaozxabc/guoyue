@@ -7,7 +7,7 @@
     <li v-for="product in products" @click="selectItem(product)" :class="{border:isShow}">
       <a href="javascript:">
         <img :src="product.src" :alt="product.name" :class="{imgBg:isShow}"/>
-        <h4 class="name">{{product.name}}<span class="count">月销量：{{product.count}}</span></h4>
+        <h4 class="name"><span> {{product.name}}</span><span class="count">月销量：{{product.count}}</span></h4>
 
         <div class="price">
           <span class="old_price">￥{{product.oldPrice}}</span>
@@ -92,20 +92,30 @@ $wd:620*0.45px;
     height: $wd;;
   }
   .product h4{
+    width: 100%;
     margin-top: 18px;
-    height: 20px;
     line-height: 20px;
+    clear: both;
   }
-  .count{
-    margin-left: 10px;
-    padding-left: 10px;
+  .product span{
+    float: left;
+    margin-top: 5px;
+    margin-right: 15px;
+    white-space: nowrap;
+  }
+  .product .count{
+    white-space: nowrap;
+    overflow: hidden;
+    height: 20px;
+    min-width: 100px;
+    margin-right: 0px;
     font-weight: bold;
     color: crimson;
     text-align: center;
-    border-left: 1px solid slategrey;
+    /*border-left: 1px solid slategrey;*/
   }
   .price{
-    float: left;
+    clear: both;
     width: 66px;
     margin-top: 22px;
   }

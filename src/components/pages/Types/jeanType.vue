@@ -325,6 +325,7 @@
     SliderType
   },
   mounted(){
+
     window.addEventListener("scroll",()=>{
       this.onScroll()
     })

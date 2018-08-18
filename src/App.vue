@@ -1,5 +1,11 @@
 <template>
   <div id="app">
+    <ploading v-show="loading">
+      <div>
+      <h2 class="welcome heartBeat">国乐一号欢迎您</h2>
+      <img src="./components/base/pageLoading/loading_bird.gif" alt="loading"/>
+      </div>
+    </ploading>
     <header>
       <div class="top_hd">
         <ul>
@@ -58,6 +64,7 @@ export default {
   name: 'App',
   data(){
     return{
+      loading:true,
       pageNav:[
         {id:"01",value:"国乐首页",path:"/"},
         {id:"02",value:"古筝专卖",path:"/zither"},
@@ -89,6 +96,13 @@ export default {
     },
     showTel(){
       alert('咨询热线：10086转110')
+    },
+    loadingShow(){
+      window.addEventListener('load',()=>{
+        if(document.readyState=='complete'){
+//          this.loading=false;
+        }
+      })
     }
   },
   components:{
@@ -106,6 +120,7 @@ export default {
     }
   },
   mounted(){
+    this.loadingShow();
     window.addEventListener("scroll",()=>{
       this. onScroll();
     })
@@ -116,9 +131,16 @@ export default {
 </script>
 
 <style scoped lang="scss" >
+  .welcome{
+    font-size: 28px;
+    text-shadow: 0px 0px 25px  #fffe50;
+    font-weight: bold;
+    font-family: huawen_black;
+    color: red;
+  }
   @media screen and (min-width: 320px) and (max-width: 370px) {
     .nav_title{
-      font-size: 26px;;
+      font-size: 24px;;
     }
     .bottom_nav p{
       font-size: 26px;;
@@ -127,7 +149,7 @@ export default {
 
   @media screen and (min-width: 371px) and (max-width: 480px) {
     .nav_title{
-      font-size: 27px;;
+      font-size: 24px;;
     }
     .bottom_nav p{
       font-size: 21px;;

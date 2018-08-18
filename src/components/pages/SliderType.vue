@@ -37,6 +37,7 @@
       },
         data(){
             return {
+              count:{'count':'36'},
               isShow:true,
               nowIndex:0,
             }
@@ -46,10 +47,20 @@
       this.isShow=!this.isShow;
       this.nowIndex=data;
       this.$emit('onOffset')
+    },
+    addCount(count){
+      for(let i=0;i<this.productlist.length;i++){
+        for(let j=0;j<this.productlist[0].length;j++){
+          this.productlist[i][j]=Object.assign({},count,this.productlist[i][j])
+        }
+      }
     }
   },
   components:{
     RightCon,LeftNav
+  },
+  created(){
+    this.addCount(this.count)
   }
     }
 </script>

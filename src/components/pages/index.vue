@@ -59,13 +59,15 @@
                     name: "月牙06山水知音",
                     oldPrice: "5980",
                     newPrice: "5180",
-                    src: "https://s1.ax1x.com/2018/07/22/PGKUBQ.png"
+                    src: "https://s1.ax1x.com/2018/07/22/PGKUBQ.png",
+                    count:'30'
                   },
                   {id:'02',
                     name: "鼎韵903午后清芳",
                     oldPrice: "5800",
                     newPrice: "4880",
-                    src: "https://s1.ax1x.com/2018/07/22/PGKa7j.png"
+                    src: "https://s1.ax1x.com/2018/07/22/PGKa7j.png",
+                    count:'366'
                   },
                   { id:'03',
                     name: "敦煌694蕉床夜月",
@@ -77,7 +79,8 @@
                     name: "鼎韵903红木竹简",
                     oldPrice: "2880",
                     newPrice: "1480",
-                    src: "https://s1.ax1x.com/2018/07/22/PGKYjS.png"
+                    src: "https://s1.ax1x.com/2018/07/22/PGKYjS.png",
+                    count:'67'
                   },
                 ],
                 "NO2": [
@@ -85,25 +88,29 @@
                     name: "520定制古筝",
                     oldPrice: "5980",
                     newPrice: "5180",
-                    src: require('../../assets/images/products/best/01.png')
+                    src: require('../../assets/images/products/best/01.png'),
+                    count:'360'
                   },
                   {id:'06',
                     name: "双核潮阳",
                     oldPrice: "5800",
                     newPrice: "4880",
-                    src: require('../../assets/images/products/best/02.png')
+                    src: require('../../assets/images/products/best/02.png'),
+                    count:'363'
                   },
                   {id:'07',
                     name: "敦煌694蕉床夜月",
                     oldPrice: "4980",
                     newPrice: "3180",
-                    src: require('../../assets/images/products/best/03.png')
+                    src: require('../../assets/images/products/best/03.png'),
+                    count:'336'
                   },
                   {id:'08',
                     name: "鼎韵903红木竹简",
                     oldPrice: "2880",
                     newPrice: "1480",
-                    src: require('../../assets/images/products/best/03.png')
+                    src: require('../../assets/images/products/best/03.png'),
+                    count:'346'
                   },
                 ],
                 "NO3": [
@@ -111,25 +118,29 @@
                     name: "月牙06山水知音",
                     oldPrice: "5980",
                     newPrice: "5180",
-                    src: require('../../assets/images/products/moderm/05.png')
+                    src: require('../../assets/images/products/moderm/05.png'),
+                    count:'26'
                   },
                   {id:'010',
                     name: "鼎韵903午后清芳",
                     oldPrice: "5800",
                     newPrice: "4880",
-                    src: require('../../assets/images/products/moderm/02.png')
+                    src: require('../../assets/images/products/moderm/02.png'),
+                    count:'136'
                   },
                   {id:'011',
                     name: "敦煌694蕉床夜月",
                     oldPrice: "4980",
                     newPrice: "3180",
-                    src: require('../../assets/images/products/moderm/03.png')
+                    src: require('../../assets/images/products/moderm/03.png'),
+                    count:'316'
                   },
                   {id:'012',
                     name: "鼎韵903红木竹简",
                     oldPrice: "2880",
                     newPrice: "1480",
-                    src: require('../../assets/images/products/moderm/04.png')
+                    src: require('../../assets/images/products/moderm/04.png'),
+                    count:'36'
                   },
                 ]
               }
@@ -198,7 +209,10 @@
   }
 
   .Promotion h4{
-    color: red;
+    padding: 5px 8px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #C21F39;
   }
   .warn{
     width: 100%;

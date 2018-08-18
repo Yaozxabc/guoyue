@@ -12,6 +12,7 @@ import './assets/styles/reset.css'
 import 'swiper/dist/js/swiper.min.js'
 import 'swiper/dist/css/swiper.min.css'
 import loading from '../src/components/base/loading'
+import ploading from '../src/components/base/pageLoading'
 import loader from '../src/components/base/loader'
 import pageNum from '../src/components/base/pageNumber'
 import store from './store'
@@ -36,6 +37,7 @@ Vue.use(MintUi);
 Vue.use(Vuelazyload,{
   loading:require('@/assets/images/loading.gif')
 })
+Vue.use(ploading)
 Vue.use(loading)
 Vue.use(loader)
 Vue.use(pageNum)
