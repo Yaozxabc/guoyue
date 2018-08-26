@@ -7,7 +7,7 @@
     <li v-for="product in products" @click="selectItem(product)" :class="{border:isShow}">
       <a href="javascript:">
         <img :src="product.src" :alt="product.name" :class="{imgBg:isShow}"/>
-        <h4 class="name"><span> {{product.name}}</span><span class="count">月销量：{{product.count}}</span></h4>
+        <h4 class="name"><p> {{product.name}}</p><p class="count">月销量：{{product.count}}</p></h4>
 
         <div class="price">
           <span class="old_price">￥{{product.oldPrice}}</span>
@@ -86,6 +86,7 @@ $wd:620*0.45px;
   }
   .product a{
     color: black;
+    outline: none;
   }
   .product img{
     width: 100%;
@@ -94,24 +95,29 @@ $wd:620*0.45px;
   .product h4{
     width: 100%;
     margin-top: 18px;
-    line-height: 20px;
+    height: 40px;
+    line-height: 40px;
     clear: both;
   }
-  .product span{
-    float: left;
-    margin-top: 5px;
+  .product p{
+    margin-top: 10px;
     margin-right: 15px;
+    font-size: 16px;
+    height: 20px;
+    line-height: 20px;
     white-space: nowrap;
   }
   .product .count{
     white-space: nowrap;
     overflow: hidden;
-    height: 20px;
+    height: 24px;
+    line-height: 24px;
     min-width: 100px;
     margin-right: 0px;
+    font-size: 16px;
     font-weight: bold;
     color: crimson;
-    text-align: center;
+    text-align: left;
     /*border-left: 1px solid slategrey;*/
   }
   .price{
@@ -132,8 +138,8 @@ $wd:620*0.45px;
   }
   .goBuy{
     position: absolute;
-    bottom: 10px;
-    right: 60px;
+    bottom: 40px;
+    right: 40px;
     width: 70px;
     height: 30px;
     background-image: url("https://s1.ax1x.com/2018/07/23/PJgW7D.png");

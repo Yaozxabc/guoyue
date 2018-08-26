@@ -24,7 +24,7 @@ const  router=new Router({
       path: '/',
       name: 'index',
       component: index,
-      meta:{title:'主页'}
+      meta:{title:''}
     },
     {
       path: '/baidu',
@@ -93,7 +93,7 @@ const  router=new Router({
   ]
 });
 router.beforeEach((to,from,next)=>{
-  let documentTitle='国乐一号';
+  let documentTitle='国乐一号琴筝馆';
   to.matched.forEach((path)=>{
     if(path.meta.title){
       documentTitle += `-${path.meta.title}`;

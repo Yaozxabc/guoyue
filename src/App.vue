@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <ploading v-show="loading">
-      <div>
-      <h2 class="welcome heartBeat">国乐一号欢迎您</h2>
-      <img src="./components/base/pageLoading/loading_bird.gif" alt="loading"/>
+      <h2 slot="title" class="welcome heartBeat">国乐一号琴筝馆</h2>
+      <div class="text_warp" slot="text">
+        <div><em>"国乐一号琴筝馆"</em>，广州市天河区天河琴筝国艺琴行旗下商城，旗下品牌有：敦煌古筝、鼎韵 古筝、天艺古筝、碧泉古筝、朱雀古筝。</div>
+        <div><em>"古筝"</em>，又名汉筝、秦筝、瑶筝、鸾筝，是中国汉民族传统乐器中的筝乐器，属于弹拨乐器。它的音色优美，音域宽广、演奏技巧丰富，具有相当强的表现力，深受广大人民群众的喜爱。</div>
+        <div><em>"古琴"</em>，又称瑶琴、玉琴、丝桐和七弦琴，是中国的传统乐器，目前存见南北朝至清代的琴谱百余种，琴曲达三千首，还有大量关于琴家、琴论、琴制、琴艺的文献，遗存之丰硕堪为中国乐器之最。</div>
       </div>
+      <img slot="img" src="./components/base/pageLoading/loading_bird.gif" alt="loading"/>
     </ploading>
     <header>
       <div class="top_hd">
@@ -98,9 +101,11 @@ export default {
       alert('咨询热线：10086转110')
     },
     loadingShow(){
+      let oImg=new Image();
+      oImg.src='./components/base/pageLoading/loading_bird.gif'
       window.addEventListener('load',()=>{
         if(document.readyState=='complete'){
-//          this.loading=false;
+          this.loading=false;
         }
       })
     }
@@ -131,13 +136,51 @@ export default {
 </script>
 
 <style scoped lang="scss" >
-  .welcome{
-    font-size: 28px;
-    text-shadow: 0px 0px 25px  #fffe50;
-    font-weight: bold;
-    font-family: huawen_black;
-    color: red;
-  }
+.text_warp{
+  position: relative;
+  width: 300px;
+  height: 180px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+.text_warp div{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  font-size: 20px;
+  text-indent: 40px;
+  height: 100%;
+  line-height: 30px;
+  text-align: left;
+}
+.text_warp em{
+  color: red;
+  font-weight: bold;
+}
+@keyframes  move{
+  0%{opacity: 1}
+  25%{opacity: 1}
+  30%{opacity: 0}
+  90%{opacity: 0}
+  95%{opacity: 1}
+  100%{opacity: 1}
+}
+
+.text_warp div:nth-child(1){
+  z-index: 3;
+  animation: move 12s ease 0s infinite;
+}
+.text_warp div:nth-child(2){
+  z-index: 2;
+  animation: move 12s ease 4s infinite;
+}
+.text_warp div:nth-child(3){
+  z-index: 1;
+  animation: move 12s ease 8s infinite;;
+}
+
   @media screen and (min-width: 320px) and (max-width: 370px) {
     .nav_title{
       font-size: 24px;;

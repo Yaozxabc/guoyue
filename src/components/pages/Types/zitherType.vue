@@ -173,161 +173,156 @@
                   },
                 ],
                 [
-                  {
-                    id:'021',
+                  {id:'021',
+                    name: "月牙06山水知音",
+                    oldPrice: "5980",
+                    newPrice: "5180",
+                    src: "http://www.guoyueyihao.com/uploads/allimg/180724/2-1PH41152050-L.jpg"
+                  },
+                  {id:'022',
+                    name: "鼎韵903午后清芳",
+                    oldPrice: "5800",
+                    newPrice: "4880",
+                    src: "http://www.guoyueyihao.com/uploads/allimg/180724/2-1PH41146120-L.jpg"
+                  },
+                  {id:'023',
+                    name: "敦煌694蕉床夜月",
+                    oldPrice: "4980",
+                    newPrice: "3180",
+                    src: "http://www.guoyueyihao.com/uploads/150310/2-1503101T44X26.jpg"
+                  },
+                  {id:'024',
+                    name: "鼎韵903红木竹简",
+                    oldPrice: "2880",
+                    newPrice: "1480",
+                    src: "http://www.guoyueyihao.com/uploads/150120/2-150120150925356.jpg"
+                  },
+                ],
+                [
+                  {id:'025',
+                    name: "月牙06山水知音",
+                    oldPrice: "5980",
+                    newPrice: "5180",
+                    src: "http://www.guoyueyihao.com/uploads/180717/1-1PGG40K4531.jpg"
+                  },
+                  {id:'026',
+                    name: "鼎韵903午后清芳",
+                    oldPrice: "5800",
+                    newPrice: "4880",
+                    src: "http://www.guoyueyihao.com/uploads/180717/1-1PGG40T4155.jpg"
+                  },
+                  {id:'027',
+                    name: "敦煌694蕉床夜月",
+                    oldPrice: "4980",
+                    newPrice: "3180",
+                    src: "http://www.guoyueyihao.com/uploads/180615/2-1P615102643243.jpg"
+                  },
+                  {id:'028',
+                    name: "鼎韵903红木竹简",
+                    oldPrice: "2880",
+                    newPrice: "1480",
+                    src: "http://www.guoyueyihao.com/uploads/180614/2-1P6141Z144628.jpg"
+                  },
+                ],
+                [
+                  {id:'029',
+                    name: "520定制古筝",
+                    oldPrice: "5980",
+                    newPrice: "5180",
+                    src: "http://www.guoyueyihao.com/uploads/180615/2-1P6151040592I.jpg"
+                  },
+                  {id:'030',
+                    name: "双核潮阳",
+                    oldPrice: "5800",
+                    newPrice: "4880",
+                    src: "http://www.guoyueyihao.com/uploads/180717/1-1PGG41025154.jpg"
+                  },
+                  {id:'031',
+                    name: "敦煌694蕉床夜月",
+                    oldPrice: "4980",
+                    newPrice: "3180",
+                    src: "http://www.guoyueyihao.com/uploads/180731/2-1PI1144I24C.jpg"
+                  },
+                  {id:'032',
+                    name: "鼎韵903红木竹简",
+                    oldPrice: "2880",
+                    newPrice: "1480",
+                    src: "http://www.guoyueyihao.com/uploads/180731/2-1PI114423aE.jpg"
+                  },
+                ],
+                [
+                  {id:'033',
+                    name: "月牙06山水知音",
+                    oldPrice: "5980",
+                    newPrice: "5180",
+                    src: "http://www.guoyueyihao.com/uploads/150330/2-150330134041626.jpg"
+                  },
+                  {id:'034',
+                    name: "鼎韵903午后清芳",
+                    oldPrice: "5800",
+                    newPrice: "4880",
+                    src: "http://www.guoyueyihao.com/uploads/150330/2-150330134041626.jpg"
+                  },
+                  {id:'035',
+                    name: "敦煌694蕉床夜月",
+                    oldPrice: "4980",
+                    newPrice: "3180",
+                    src: "http://www.guoyueyihao.com/uploads/150330/2-150330115950B9.jpg"
+                  },
+                  {id:'036',
+                    name: "鼎韵903红木竹简",
+                    oldPrice: "2880",
+                    newPrice: "1480",
+                    src: "http://www.guoyueyihao.com/uploads/150330/2-150330120JOS.jpg"
+                  },
+                ],
+                [
+                  {id:'037',
+                    name: "520定制古筝",
+                    oldPrice: "5980",
+                    newPrice: "5180",
+                    src: require('@/assets/images/products/best/01.png')
+                  },
+                  {id:'038',
+                    name: "双核潮阳",
+                    oldPrice: "5800",
+                    newPrice: "4880",
+                    src: require('@/assets/images/products/best/02.png')
+                  },
+                  {id:'039',
+                    name: "敦煌694蕉床夜月",
+                    oldPrice: "4980",
+                    newPrice: "3180",
+                    src: require('@/assets/images/products/best/03.png')
+                  },
+                  {id:'040',
+                    name: "鼎韵903红木竹简",
+                    oldPrice: "2880",
+                    newPrice: "1480",
+                    src: require('@/assets/images/products/best/03.png')
+                  },
+                ],
+                [
+                  {id:'041',
                     name: "月牙06山水知音",
                     oldPrice: "5980",
                     newPrice: "5180",
                     src: require('@/assets/images/products/moderm/05.png')
                   },
-                  {
-                    id:'022',
+                  {id:'042',
                     name: "鼎韵903午后清芳",
                     oldPrice: "5800",
                     newPrice: "4880",
                     src: require('@/assets/images/products/moderm/02.png')
                   },
-                  {
-                    id:'023',
+                  {id:'043',
                     name: "敦煌694蕉床夜月",
                     oldPrice: "4980",
                     newPrice: "3180",
                     src: require('@/assets/images/products/moderm/03.png')
                   },
-                  {
-                    id:'024',name: "鼎韵903红木竹简",
-                    oldPrice: "2880",
-                    newPrice: "1480",
-                    src: require('@/assets/images/products/moderm/04.png')
-                  },
-                ],
-                [
-                  {
-                    id:'025',
-                    name: "月牙06山水知音",
-                    oldPrice: "5980",
-                    newPrice: "5180",
-                    src: "https://s1.ax1x.com/2018/07/22/PGKUBQ.png"
-                  },
-                  {
-                    id:'026',
-                    name: "鼎韵903午后清芳",
-                    oldPrice: "5800",
-                    newPrice: "4880",
-                    src: "https://s1.ax1x.com/2018/07/22/PGKa7j.png"
-                  },
-                  {
-                    id:'027',name: "敦煌694蕉床夜月",
-                    oldPrice: "4980",
-                    newPrice: "3180",
-                    src: "https://s1.ax1x.com/2018/07/22/PGKNng.png"
-                  },
-                  {
-                    id:'028',name: "鼎韵903红木竹简",
-                    oldPrice: "2880",
-                    newPrice: "1480",
-                    src: "https://s1.ax1x.com/2018/07/22/PGKYjS.png"
-                  },
-                ],
-                [
-                  {
-                    id:'029',name: "520定制古筝",
-                    oldPrice: "5980",
-                    newPrice: "5180",
-                    src: require('@/assets/images/products/best/01.png')
-                  },
-                  {
-                    id:'030',name: "双核潮阳",
-                    oldPrice: "5800",
-                    newPrice: "4880",
-                    src: require('@/assets/images/products/best/02.png')
-                  },
-                  {
-                    id:'031',name: "敦煌694蕉床夜月",
-                    oldPrice: "4980",
-                    newPrice: "3180",
-                    src: require('@/assets/images/products/best/03.png')
-                  },
-                  {
-                    id:'032',name: "鼎韵903红木竹简",
-                    oldPrice: "2880",
-                    newPrice: "1480",
-                    src: require('@/assets/images/products/best/03.png')
-                  },
-                ],
-                [
-                  {
-                    id:'033',name: "月牙06山水知音",
-                    oldPrice: "5980",
-                    newPrice: "5180",
-                    src: "https://s1.ax1x.com/2018/07/22/PGKUBQ.png"
-                  },
-                  {
-                    id:'034',name: "鼎韵903午后清芳",
-                    oldPrice: "5800",
-                    newPrice: "4880",
-                    src: "https://s1.ax1x.com/2018/07/22/PGKa7j.png"
-                  },
-                  {
-                    id:'035',name: "敦煌694蕉床夜月",
-                    oldPrice: "4980",
-                    newPrice: "3180",
-                    src: "https://s1.ax1x.com/2018/07/22/PGKNng.png"
-                  },
-                  {
-                    id:'036',name: "鼎韵903红木竹简",
-                    oldPrice: "2880",
-                    newPrice: "1480",
-                    src: "https://s1.ax1x.com/2018/07/22/PGKYjS.png"
-                  },
-                ],
-                [
-                  {
-                    id:'037',name: "520定制古筝",
-                    oldPrice: "5980",
-                    newPrice: "5180",
-                    src: require('@/assets/images/products/best/01.png')
-                  },
-                  {
-                    id:'038',name: "双核潮阳",
-                    oldPrice: "5800",
-                    newPrice: "4880",
-                    src: require('@/assets/images/products/best/02.png')
-                  },
-                  {
-                    id:'039',name: "敦煌694蕉床夜月",
-                    oldPrice: "4980",
-                    newPrice: "3180",
-                    src: require('@/assets/images/products/best/03.png')
-                  },
-                  {
-                    id:'040',name: "鼎韵903红木竹简",
-                    oldPrice: "2880",
-                    newPrice: "1480",
-                    src: require('@/assets/images/products/best/03.png')
-                  },
-                ],
-                [
-                  {
-                    id:'041',name: "月牙06山水知音",
-                    oldPrice: "5980",
-                    newPrice: "5180",
-                    src: require('@/assets/images/products/moderm/05.png')
-                  },
-                  {
-                    id:'042',name: "鼎韵903午后清芳",
-                    oldPrice: "5800",
-                    newPrice: "4880",
-                    src: require('@/assets/images/products/moderm/02.png')
-                  },
-                  {
-                    id:'043',name: "敦煌694蕉床夜月",
-                    oldPrice: "4980",
-                    newPrice: "3180",
-                    src: require('@/assets/images/products/moderm/03.png')
-                  },
-                  {
-                    id:'044',name: "鼎韵903红木竹简",
+                  {id:'044',
+                    name: "鼎韵903红木竹简",
                     oldPrice: "2880",
                     newPrice: "1480",
                     src: require('@/assets/images/products/moderm/04.png')

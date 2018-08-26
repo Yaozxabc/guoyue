@@ -1,7 +1,11 @@
 <template>
 <div class="pageLoading">
-  <div class="img">
-    <slot></slot>
+  <div class="mainShow">
+    <slot name="title" ></slot>
+    <div class="img">
+      <slot name="img"></slot>
+    </div>
+    <slot name="text"></slot>
     <h3>Loading...</h3>
   </div>
 
@@ -18,6 +22,14 @@
 
 
 <style scoped>
+  .pageLoading .welcome{
+    font-size: 30px;
+    text-shadow: 2px 2px   #fffe50;
+    font-weight: bold;
+    font-family: huawen_black;
+    color: red;
+    text-align: center;
+  }
 .pageLoading{
   max-width: 640px;
   margin: 0 auto;
@@ -30,21 +42,25 @@
   background:  #fff;;
   text-align: center;
 }
-  .pageLoading .img{
+  .pageLoading .mainShow{
     position: fixed;
-    left: calc( 50% - 100px);
-    top: calc( 50% - 100px);
-    width: 200px;
-    height: 200px;
+    left: calc( 50% - 150px);
+    top: calc( 50% - 300px);
+    width: 300px;
+    height: 300px;
   }
-  .pageLoading img{
+  .pageLoading .img{
+    width: 300px;
+    height: 300px;
+  }
+  .pageLoading .img img{
     width: 100%;
+    height: 100%;
   }
   .pageLoading h3{
     font-size: 30px;
     font-weight: bold;
     color: rosybrown;
     text-align: center;
-    text-shadow: 3px 2px #fffe50;
   }
 </style>
